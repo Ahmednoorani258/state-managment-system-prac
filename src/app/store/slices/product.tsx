@@ -11,7 +11,9 @@ const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers:{
-        addProduct (state, action){},
+        addProduct (state, action){
+            
+        },
         deleteProduct (state, action){}
     },    
 })
