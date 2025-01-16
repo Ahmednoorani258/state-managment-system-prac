@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { CartProvider } from "./context";
+import CountProvider from "./CountProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,15 +30,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CartProvider>
+        <CountProvider>
         <Navbar/>
         <main className="flex justify-center items-center flex-col">
           {children}
           
         </main>
         <Footer/>
-        </CartProvider>
-        
+        </CountProvider>
       </body>
     </html>
   );

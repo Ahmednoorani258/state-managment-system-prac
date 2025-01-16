@@ -16,6 +16,8 @@ export default function CountProvider({
 }>) {
 
     const [count, setCount] = useState(0)
+
+    
     const [cart,setCart] = useState<Obj[]>([])
     const add = (obj:Obj) =>setCart([...cart,obj])
     const del = (id:number)=> {

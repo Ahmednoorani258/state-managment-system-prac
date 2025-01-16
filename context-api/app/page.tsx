@@ -1,29 +1,29 @@
-"use client"
-import{useContext} from "react"
-import { CountContext } from "./context";
-import Shop from "./components/shop";
-export default function Home() {
-  const obj = useContext(CountContext)
-  
-  
-  return (
-   <div className="min-h-screen flex flex-col justify-center items-center">
-    {/* <>
-    <h1 className="text-4xl">  Context Api</h1>
-    <div className="flex p-12 gap-8 justify-center items-center">
-    <button onClick={()=> obj.setCount(++obj.count)} className="bg-green-300 p-2 text-black rounded-xl">+</button>
-    <p>{obj.count}</p>
-    <button onClick={()=> obj.setCount(--obj.count)} className="bg-red-300 p-2 text-black rounded-xl">-</button>
-    </div>
-    
-    </> */}
 
-    <h1 className="text-4xl">  Context Api</h1>
-    <h1 className="text-4xl"> Shopping (Cart Functionality)</h1>
-    <div className="flex p-12 gap-8 justify-center items-center">
-      <Shop/>
+import { Products,products } from "./data/data";
+import ProductCard from "./components/Card";
+
+
+export default function Home() {
+
+
+  return (
+    <div className="min-h-screen flex flex-col justify-center items-center">
+      <h1 className="text-5xl">Products</h1>
+      <div className="container mx-auto p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product:Products) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            image={product.image}
+          />
+        ))}
+      </div>
+    </div>
     </div>
     
-  </div>
   );
 }

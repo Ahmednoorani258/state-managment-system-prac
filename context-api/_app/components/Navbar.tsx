@@ -2,11 +2,11 @@
 // components/Navbar.tsx
 import React, { useContext, useState } from 'react';
 import Link from 'next/link';
-
+import { CartContext } from '../context';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+  const obj = useContext(CartContext)
 
   return (
     <nav className="bg-gray-100 shadow-md dark:bg-gray-900">
